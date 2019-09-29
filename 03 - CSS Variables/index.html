@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Scoped CSS Variables and JS</title>
 </head>
+
 <body>
   <h2>Update CSS Variables with <span class='hl'>JS</span></h2>
 
@@ -22,7 +24,7 @@
 
   <style>
     :root {
-      --base: #ffc600;
+      --base: #FFC600;
       --spacing: 10px;
       --blur: 10px;
     }
@@ -30,16 +32,12 @@
     img {
       padding: var(--spacing);
       background: var(--base);
-      filter: blur(var(--blur));
+      filter: blur(var(--blur))
     }
 
     .hl {
       color: var(--base);
     }
-
-    /*
-      misc styles, nothing to do with CSS variables
-    */
 
     body {
       text-align: center;
@@ -67,10 +65,12 @@
       document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
     }
 
-    inputs.forEach(input => input.addEventListener('change', handleUpdate));
-    inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+    inputs.forEach(input => {
+      input.addEventListener('change', handleUpdate);
+      input.addEventListener('mousemove', handleUpdate);
+    })
   </script>
 
-
 </body>
+
 </html>
